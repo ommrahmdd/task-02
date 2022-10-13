@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Roboto";
+  color: $mainColor;
+  background-color: $bgColor;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+.container {
+  width: 95%;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 720px) {
+  html {
+    font-size: 11px;
+  }
+  .container {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 1024) {
+  html {
+    font-size: 12px;
+  }
+  .container {
+    width: 85%;
+  }
+}

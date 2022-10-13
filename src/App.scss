@@ -1,0 +1,12 @@
+//STYLE: base
+@import "./sass/base/variables";
+@import "./sass/base/base";
+@import "./sass/base/typography";
+
+//STYLE: layouts
+@import "./sass/layouts/nav";
+@import "./sass/layouts/movies";
+@import "./sass/layouts/footer";
+
+//STYLE: pages
+@import "./sass/pages/home";

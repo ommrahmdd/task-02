@@ -1,0 +1,9 @@
+.nav {
+  padding: 2rem 0;
+  box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.212);
+  &__logo {
+    font-size: 3rem;
+    color: $mainColor;
+    font-weight: 600;
+  }
+}
