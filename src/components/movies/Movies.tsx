@@ -6,6 +6,7 @@ import "react-lazy-load-image-component/src/effects/blur.css";
 
 import IMovie from "../../models/IMovie.model";
 import { fetchMovies } from "./utils";
+import Loading from "../Loading";
 
 export default function Movies() {
   let [movies, setMovies] = useState<IMovie[]>();
@@ -32,6 +33,10 @@ export default function Movies() {
       navigate(`?page=${page - 1}`);
     }
   };
+  // HANDLE: Move to Movie Details
+  let handleMovieNavigate = (id: number) => {
+    navigate(`/movie/${id}`);
+  };
 
   return (
     <section className="movies">
@@ -46,7 +51,11 @@ export default function Movies() {
         <div className="movies__content">
           {movies ? (
             movies.map((movie, index) => (
-              <div className="movie" key={index}>
+              <div
+                className="movie"
+                key={index}
+                onClick={() => handleMovieNavigate(movie.id)}
+              >
                 {/* ------------ Movie Image */}
                 <LazyLoadImage
                   src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}
@@ -86,7 +95,7 @@ export default function Movies() {
               </div>
             ))
           ) : (
-            <div className="loading"> Loading ...</div>
+            <Loading />
           )}
         </div>
         {/* --------------- STYLE: Next and Previous Buttons */}

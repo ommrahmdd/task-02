@@ -3,6 +3,9 @@
   &__header {
     h5 {
       font-weight: 600;
+      span {
+        font-weight: 100;
+      }
     }
     margin-bottom: 6rem;
   }
@@ -16,12 +19,15 @@
       border-radius: 1rem;
       overflow: hidden;
       box-shadow: 0.5rem 0.5rem 1rem rgba(0, 0, 0, 0.593);
+      transition: all 0.25s ease-in-out;
+      cursor: pointer;
       &__img {
         width: 100%;
         height: 30rem;
         object-fit: cover;
         margin-bottom: 1rem;
         filter: grayscale(0.5);
+        overflow: hidden;
       }
 
       &__txt {
@@ -49,6 +55,12 @@
             color: rgb(183, 183, 183);
           }
         }
+      }
+
+      &:hover {
+        opacity: 0.3;
+        transform: translateY(-0.5rem);
+        box-shadow: 0.8rem 0.8rem 1rem rgba(0, 0, 0, 0.593);
       }
     }
   }
@@ -96,4 +108,39 @@
   font-size: 3rem;
   font-weight: 300;
   z-index: 5;
+
+  .loader {
+    width: 84px;
+    height: 84px;
+    position: relative;
+  }
+  .loader:before,
+  .loader:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 84px;
+    height: 84px;
+    border-radius: 50%;
+    background: $mainColor;
+    animation: push 1s infinite linear alternate;
+  }
+  .loader:after {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    animation-direction: alternate-reverse;
+  }
+  @keyframes push {
+    0% {
+      width: 14px;
+      height: 14px;
+    }
+    100% {
+      width: 84px;
+      height: 84px;
+    }
+  }
 }

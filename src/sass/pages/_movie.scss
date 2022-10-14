@@ -1,0 +1,142 @@
+.moviePage {
+  min-height: 100vh;
+  .back {
+    font-size: 3rem;
+    margin: 2rem;
+    font-weight: 200 !important;
+    background-color: transparent;
+    display: inline-block;
+    color: $mainColor;
+    padding: 0.2rem 1rem;
+    border-radius: 0.5rem;
+    outline: none;
+    border: 0.1rem solid $mainColor;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      background-color: $mainColor;
+      color: $bgColor;
+    }
+  }
+  &__content {
+    padding: 6rem 0;
+    display: flex;
+    align-items: flex-start;
+    // justify-content: space-between;
+    flex-wrap: wrap;
+    &-left,
+    &-right {
+      width: 50rem;
+    }
+    &-left {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &-right {
+      margin-bottom: 5rem;
+      padding: 4rem 0;
+      width: 30rem;
+    }
+  }
+
+  .movieDetails {
+    &__img {
+      width: 100%;
+      height: 50rem;
+      object-fit: contain;
+      filter: grayscale(0.3);
+    }
+    &__title {
+      line-height: 0.9;
+      margin-bottom: 1rem;
+      font-size: 5rem;
+      width: 30rem;
+    }
+    &__tagline {
+      margin-bottom: 2rem;
+      font-weight: 300;
+      font-style: italic;
+    }
+    &__overview {
+      width: 90%;
+      font-weight: 400;
+      margin-bottom: 2rem;
+    }
+    &__date,
+    &__rate,
+    &__homepage {
+      font-size: 1.6rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      span {
+        font-weight: 600;
+        margin-right: 2rem;
+      }
+    }
+
+    &__homepage {
+      width: 25rem !important;
+      overflow: hidden;
+      &-link {
+        font-size: 1.1rem;
+      }
+    }
+
+    &__genres {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      span {
+        padding: 0.5rem 1rem;
+        border: 0.1rem solid $mainColor;
+      }
+    }
+    &__companies {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      // justify-content: space-around;
+      gap: 3rem;
+      margin: 6rem 0;
+      img {
+        width: 13rem;
+        height: 13rem;
+        object-fit: contain;
+        background-color: $mainColor;
+        padding: 2rem;
+      }
+      h6 {
+        width: 15rem;
+      }
+    }
+  }
+}
+
+// STYLE: media queries
+@media screen and (min-width: 720px) {
+  .moviePage {
+    &__content {
+      &-right {
+        padding: 0;
+        width: 60rem;
+      }
+    }
+
+    .movieDetails {
+      &__homepage {
+        width: auto;
+        overflow: visible;
+        &-link {
+          font-size: 1.5rem;
+        }
+      }
+      &__title {
+        font-size: 7rem;
+        width: 100%;
+      }
+    }
+  }
+}

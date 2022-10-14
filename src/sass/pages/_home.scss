@@ -42,13 +42,14 @@
     &-appgain {
       position: absolute;
       left: 5%;
-      top: 15%;
+      top: 25%;
       z-index: 5;
       color: $mainColor;
-      text-transform: capitalize;
-      font-size: 6rem !important;
+      font-size: 5rem !important;
       span {
-        color: $logo-mainColor;
+        color: transparent;
+        -webkit-text-stroke-color: $mainColor;
+        -webkit-text-stroke-width: 0.1rem;
       }
     }
   }

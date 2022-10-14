@@ -13,4 +13,9 @@ export default interface IMovie {
   vote_average: number;
   vote_count: number;
   genre_ids: number[];
+  production_companies?: any[];
+  status?: string;
+  tagline?: string;
+  homepage?: string;
+  genres?: any[];
 }

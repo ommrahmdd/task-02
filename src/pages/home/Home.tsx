@@ -1,5 +1,5 @@
 import React from "react";
-import Movies from "../movies/Movies";
+import Movies from "../../components/movies/Movies";
 import headerImg from "./../../assets/imgs/header.jpg";
 export default function Home() {
   return (
@@ -9,7 +9,7 @@ export default function Home() {
         <div className="home__header-overlay"></div>
         <img src={headerImg} alt="header image" className="home__header-img" />
         <h1 className="home__header-appgain">
-          <span>App</span>gain.io
+          <span>APP</span>GAIN.io
         </h1>
         <div className="home__header-wave">
           <svg
