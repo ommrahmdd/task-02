@@ -26,7 +26,8 @@
     flex-wrap: wrap;
     &-left,
     &-right {
-      width: 50rem;
+      // width: 50rem;
+      width: 100%;
     }
     &-left {
       display: flex;
@@ -36,7 +37,7 @@
     &-right {
       margin-bottom: 5rem;
       padding: 4rem 0;
-      width: 30rem;
+      // width: 30rem;
     }
   }
 
@@ -49,7 +50,7 @@
     }
     &__title {
       line-height: 0.9;
-      margin-bottom: 1rem;
+      margin: 1rem 0;
       font-size: 5rem;
       width: 30rem;
     }
@@ -81,6 +82,8 @@
       overflow: hidden;
       &-link {
         font-size: 1.1rem;
+        color: $mainColor;
+        text-decoration: underline;
       }
     }
 
@@ -108,8 +111,21 @@
         background-color: $mainColor;
         padding: 2rem;
       }
-      h6 {
-        width: 15rem;
+      &-txt {
+        width: 13rem;
+        height: 13rem;
+        color: $bgColor;
+        background-color: $mainColor;
+        font-weight: 300;
+        text-align: center;
+        font-size: 1.5rem !important;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        span {
+          font-weight: 500;
+        }
       }
     }
   }
@@ -121,7 +137,6 @@
     &__content {
       &-right {
         padding: 0;
-        width: 60rem;
       }
     }
 
@@ -136,6 +151,19 @@
       &__title {
         font-size: 7rem;
         width: 100%;
+      }
+    }
+  }
+}
+@media screen and (min-width: 1024px) {
+  .moviePage {
+    &__content {
+      &-left {
+        width: 50rem;
+      }
+      &-right {
+        padding: 0;
+        width: 70rem;
       }
     }
   }

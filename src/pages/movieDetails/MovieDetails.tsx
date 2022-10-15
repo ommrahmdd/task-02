@@ -17,7 +17,7 @@ export default function MovieDetails() {
     getMovie(Number(movieID)).then((data) => {
       setMovie(data);
     });
-  }, []);
+  }, [movieID]);
   let handleBackBtn = () => {
     navigate("../");
   };
@@ -104,7 +104,15 @@ export default function MovieDetails() {
                           key={index}
                         />
                       );
-                    else return <h6 key={index}>{company.name} Company</h6>;
+                    else
+                      return (
+                        <div
+                          key={index}
+                          className="movieDetails__companies-txt"
+                        >
+                          {company.name} <span>Company</span>
+                        </div>
+                      );
                   })}
                 </div>
               </div>
