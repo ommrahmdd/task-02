@@ -9,6 +9,9 @@
 @import "./sass/layouts/footer";
 @import "./sass/layouts/slider";
 
+// STYLE: components
+@import "./sass/components/loading";
+
 //STYLE: pages
 @import "./sass/pages/home";
-@import "./sass/pages/movie";
+@import "./sass/pages/movieDetails";

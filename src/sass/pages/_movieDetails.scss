@@ -101,7 +101,6 @@
       display: flex;
       align-items: center;
       flex-wrap: wrap;
-      // justify-content: space-around;
       gap: 3rem;
       margin: 6rem 0;
       img {
@@ -116,7 +115,7 @@
         height: 13rem;
         color: $bgColor;
         background-color: $mainColor;
-        font-weight: 300;
+        font-weight: 500;
         text-align: center;
         font-size: 1.5rem !important;
         display: flex;
@@ -124,7 +123,7 @@
         justify-content: center;
         flex-direction: column;
         span {
-          font-weight: 500;
+          font-weight: 300;
         }
       }
     }

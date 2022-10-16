@@ -11,10 +11,11 @@
   }
 
   &__content {
-    padding: 0 3rem;
+    // padding: 0 3rem;
+    padding: 0 1rem;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
-    grid-gap: 4rem;
+    grid-template-columns: repeat(auto-fill, minmax(10rem, 1fr));
+    grid-gap: 2rem;
     .movie {
       border-radius: 1rem;
       overflow: hidden;
@@ -23,7 +24,8 @@
       cursor: pointer;
       &__img {
         width: 100%;
-        height: 30rem;
+        // height: 30rem;
+        height: 20rem;
         object-fit: cover;
         margin-bottom: 1rem;
         filter: grayscale(0.5);
@@ -36,10 +38,13 @@
         &-title {
           font-weight: 300;
           margin-bottom: 1rem;
+          font-size: 1.5rem !important;
         }
 
         &-rate {
           display: flex;
+          font-size: 0.9rem;
+          margin-bottom: 1rem;
           div {
             margin-right: 1rem;
           }
@@ -48,7 +53,7 @@
         &-date {
           opacity: 0.8;
           p {
-            font-size: 1.4rem !important;
+            font-size: 1rem !important;
             font-style: italic;
             font-weight: 300;
             text-align: end;
@@ -98,52 +103,34 @@
   opacity: 0.2;
 }
 
-.loading {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-color: $bgColor;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 3rem;
-  font-weight: 300;
-  z-index: 5;
-
-  .loader {
-    width: 84px;
-    height: 84px;
-    position: relative;
-  }
-  .loader:before,
-  .loader:after {
-    content: "";
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 84px;
-    height: 84px;
-    border-radius: 50%;
-    background: $mainColor;
-    animation: push 1s infinite linear alternate;
-  }
-  .loader:after {
-    top: auto;
-    bottom: 0;
-    left: 0;
-    background: #fff;
-    animation-direction: alternate-reverse;
-  }
-  @keyframes push {
-    0% {
-      width: 14px;
-      height: 14px;
+@media screen and (min-width: 375px) {
+  .movies {
+    &__content {
+      grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
     }
-    100% {
-      width: 84px;
-      height: 84px;
+  }
+}
+@media screen and (min-width: 720px) {
+  .movies {
+    &__content {
+      grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+      padding: 0 3rem;
+
+      .movie {
+        &__img {
+          height: 30rem;
+        }
+        &__txt {
+          &-title {
+            font-size: 2rem !important;
+          }
+          &-date {
+            p {
+              font-size: 1.4rem !important;
+            }
+          }
+        }
+      }
     }
   }
 }

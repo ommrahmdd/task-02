@@ -9,23 +9,20 @@ import Slider from "../../components/slider/Slider";
 export default function MovieDetails() {
   let { movieID } = useParams();
   let [movie, setMovie] = useState<IMovie>();
-  let navigate = useNavigate();
+
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   useEffect(() => {
     getMovie(Number(movieID)).then((data) => {
+      console.log(data);
       setMovie(data);
     });
   }, [movieID]);
-  let handleBackBtn = () => {
-    navigate("../");
-  };
+
   return (
     <div className="moviePage">
-      {/* <button className="back" onClick={handleBackBtn}>
-        &larr;
-      </button> */}
       <div className="container">
         <div className="moviePage__content">
           <div className="moviePage__content-left">

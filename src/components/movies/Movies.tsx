@@ -78,7 +78,7 @@ export default function Movies() {
                       {new Array(5).fill(0).map((star, index) => (
                         <i
                           className={`fa-solid fa-star ${
-                            Math.ceil(movie.vote_average / 2) > index + 1
+                            Math.ceil(movie.vote_average) / 2 > index + 1
                               ? ""
                               : "star__opacity"
                           }`}

@@ -2,20 +2,20 @@ import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { SwiperSlide, Swiper } from "swiper/react";
 import { Pagination, Navigation } from "swiper";
+import IMovie from "../../models/IMovie.model";
+import { fetchMovies } from "../movies/utils";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import IMovie from "../../models/IMovie.model";
-import { fetchMovies } from "../movies/utils";
 
 export default function Slider() {
   let [movies, setMovies] = useState<IMovie[]>([]);
   let navigate = useNavigate();
   let { movieID } = useParams();
 
+  // HANDLE: use Effect
   useEffect(() => {
-    fetchMovies(1).then((res) => {
-      console.log(res);
+    fetchMovies(2).then((res) => {
       setMovies(res);
     });
   }, [movieID]);
@@ -30,7 +30,6 @@ export default function Slider() {
   return (
     <div className="swiperComponent">
       <h4>
-        {" "}
         <span>&mdash; </span> Also you may like
       </h4>
       <Swiper
@@ -55,23 +54,22 @@ export default function Slider() {
         navigation={true}
         modules={[Pagination, Navigation]}
       >
-        {movies
-          ? movies.splice(0, 10).map((movie, index) => (
-              <SwiperSlide
-                onClick={() => handleMovieClick(movie.id)}
+        {movies ? (
+          movies.splice(0, 10).map((movie, index) => (
+            <SwiperSlide onClick={() => handleMovieClick(movie.id)} key={index}>
+              <img
+                src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
+                alt="Movie Image"
                 key={index}
-              >
-                <img
-                  src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
-                  alt="Movie Image"
-                  key={index}
-                />
-                <div className="swiperComponent__txt">
-                  <h6>{movie.title}</h6>
-                </div>
-              </SwiperSlide>
-            ))
-          : "hi"}
+              />
+              <div className="swiperComponent__txt">
+                <h6>{movie.title}</h6>
+              </div>
+            </SwiperSlide>
+          ))
+        ) : (
+          <div>Loading ...</div>
+        )}
       </Swiper>
     </div>
   );
