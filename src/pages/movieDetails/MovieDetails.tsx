@@ -16,7 +16,6 @@ export default function MovieDetails() {
 
   useEffect(() => {
     getMovie(Number(movieID)).then((data) => {
-      console.log(data);
       setMovie(data);
     });
   }, [movieID]);
