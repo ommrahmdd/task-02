@@ -12,6 +12,7 @@ body {
   font-family: "Roboto";
   color: $mainColor;
   background-color: $bgColor;
+  overflow-x: hidden;
 }
 ul {
   list-style: none;

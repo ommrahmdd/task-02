@@ -1,13 +1,22 @@
 import React from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import Movies from "../../components/movies/Movies";
 import headerImg from "./../../assets/imgs/header.jpg";
+import "react-lazy-load-image-component/src/effects/blur.css";
+
 export default function Home() {
   return (
     <div className="home">
       {/* --------------------- START STYLE: Header */}
       <header className="home__header">
         <div className="home__header-overlay"></div>
-        <img src={headerImg} alt="header image" className="home__header-img" />
+        {/* <img src={headerImg} alt="header image" className="home__header-img" /> */}
+        <LazyLoadImage
+          src={headerImg}
+          alt="header image"
+          className="home__header-img"
+          effect="blur"
+        />
         <h1 className="home__header-appgain">
           <span>APP</span>GAIN.io
         </h1>
